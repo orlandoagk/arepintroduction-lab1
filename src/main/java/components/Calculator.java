@@ -9,19 +9,20 @@ public class Calculator {
             sumaDeValores+=lista.nextNode().value;
         }
 
-        return sumaDeValores/lista.size;
+        return Math.round(sumaDeValores/lista.size*100.0)/100.0;
     }
     public static double deviation(LinkedList lista,double avg) throws Exception {
-        double sumaDeValores = 0;
+        double sumaDeValores = 0.0;
         lista.restartView();
 
-        sumaDeValores+=lista.nowNode.value;
+        sumaDeValores+=(Math.pow((lista.nowNode.value - avg),2));
+        double valorIteracion = 0.0;
         for(int i = 0; i< lista.size-1;i++){
-            double valorIteracion = Math.pow((lista.nextNode().value - avg),2);
+            valorIteracion = Math.pow((lista.nextNode().value - avg),2);
             sumaDeValores+=valorIteracion;
         }
 
         double valorDentroRaiz = sumaDeValores/(lista.size-1);
-        return Math.sqrt(valorDentroRaiz);
+        return Math.round(Math.sqrt(valorDentroRaiz)*100.0)/100.0;
     }
 }

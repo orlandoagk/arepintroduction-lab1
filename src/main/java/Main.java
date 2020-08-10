@@ -25,7 +25,7 @@ public class Main {
             System.out.println("Values: "+c);
             System.out.println("Mean: "+mean);
             System.out.println("Standard Deviation:"+Calculator.deviation(valores,mean));
-            System.out.println("--------------------------------------");
+            System.out.println("------------------------------------------------------");
 
 
         }
